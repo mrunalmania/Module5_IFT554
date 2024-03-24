@@ -61,4 +61,13 @@ app.use(`${process.env.API_VERSION}/users`, userRouter);
 const booksRoutes = require('./routes/bookRoutes.js');
 app.use(`${process.env.API_VERSION}/books`, booksRoutes);
 
+// Use the logger middleware
+app.use(logger);
+
+// Other middleware and route handlers
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+
 module.exports = app;

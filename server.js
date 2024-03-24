@@ -35,6 +35,12 @@ mongoose
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
+  // Use the logger middleware
+  logger(req, res, () => {
+    // Other request handling logic
+    res.statusCode = 200;
+    res.end('Hello, World!');
+  });
   console.log(`App running on port ${port}...`);
   console.log(`To test the IFT 458 REST App Click Or Type: http://localhost:${port}...`);
 });
